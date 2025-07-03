@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Name Cards</title>
+    <style>
+        .p-cards{
+        background-color:rgb(236, 210, 167);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 400px;
+        padding: 10px 20px
+
+        }
+    </style>
+</head>
+<body>
+
+    <section id="prduct-list">
+        <div class="container " id="product-container">
+ 
+        </div>
+    </section>
+    
+
+<script>
+    const list = [  { name: "Sara", age: 25 },
+                    { name: "Amit", age: 28 },
+                    { name: "Lina", age: 24 },
+                    { name: "Omar", age: 30 } ]
+
+
+    const productContainer = document.getElementById('product-container')
+
+    
+    
+    list.forEach((userData)=> {
+        const nameCard = document.createElement('div')
+        const nameElement = document.createElement("h3");
+        const ageElement = document.createElement("p");
+
+        //console.log(userData);
+        
+
+        nameElement.textContent =  "Name: "+ userData.name ;
+        ageElement.textContent=  "Age: "+ userData.age;
+        console.log(nameElement)
+        console.log(ageElement)
+
+        nameCard.appendChild(nameElement);
+        nameCard.appendChild(ageElement);
+
+
+        //console.log(nameCard);
+        productContainer.appendChild(nameCard);
+
+        nameCard.setAttribute("class", "p-cards  animate__animated animate__heartBeat")
+
+        productContainer.style.display = "grid";
+        productContainer.style.gridTemplateColumns = "1fr 1fr";
+        productContainer.style.gap = "30px";
+        productContainer.style.placeItems= "center";
+
+
+    
+    })
+   
+
+</script>
+</body>
+</html>
