@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="inputField">
+
+        <label for="fruits">Enter the text here</label>
+        <input id="fruits" type="text" required>
+        <button> Add</button>
+
+    </div>
+    <div id="list-container">
+
+    </div>
+
+    <script>
+
+        let data = []
+
+        const button=document.querySelector('button')
+
+
+        button.addEventListener('click', (name)=>{
+        const input = document.getElementById('fruits');
+        let inputText='';
+        inputText=input.value;
+
+        data.push(inputText)
+            
+        createList(data)
+
+        input.value = ''
+
+        
+        })
+
+      
+
+        const createList = (data)=> {
+            console.log(data, 'data')
+            
+            let listHtml = ''
+
+            data.forEach((item)=> {
+
+                console.log(item)
+
+                
+                    listHtml += `<li>${item}</li>`
+                
+            })
+
+            const items = document.createElement('ul');
+
+            items.innerHTML = listHtml
+
+            const listContainer = document.getElementById('list-container')
+
+            listContainer.innerHTML = ''
+
+            listContainer.appendChild(items)
+        }
+
+
+    </script>
+    <style>
+
+        ul {
+            list-style-type: none;
+        }
+    </style>
+</body>
+</html>
+

@@ -1,0 +1,16 @@
+* {
+    margin: 0;
+    padding: 0;
+
+}
+
+.card {
+    padding: 15px;
+    background: slategray;
+    border: 1px solid;
+    max-width: 300px;
+}
+
+ul {
+    list-style-type: none;
+}
